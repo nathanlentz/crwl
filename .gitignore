@@ -18,5 +18,8 @@ npm-debug.log*
 .DS_Store
 coverage/
 
+# per-developer Claude Code settings
+.claude/settings.local.json
+
 # packaged artifacts
 sitemap-to-miro.zip
