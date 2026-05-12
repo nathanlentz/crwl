@@ -1,5 +1,5 @@
 {
-  "name": "sitemap-to-miro",
+  "name": "crwl",
   "version": "1.0.0",
   "description": "Console app that crawls a website with Firecrawl and renders a sitemap tree on a Miro board via the Miro MCP server",
   "main": "dist/index.js",

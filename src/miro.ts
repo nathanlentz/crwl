@@ -33,7 +33,7 @@ export class MiroMcpClient {
       authProvider: this.authProvider,
     });
     this.client = new Client(
-      { name: "sitemap-to-miro", version: "1.0.0" },
+      { name: "crwl", version: "1.0.0" },
       { capabilities: {} },
     );
   }

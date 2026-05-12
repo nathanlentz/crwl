@@ -36,7 +36,7 @@ interface CliArgs {
 function parseArgs(argv: string[]): CliArgs {
   const args = argv.slice(2);
   if (args.length === 0 || args[0] === "--help" || args[0] === "-h") {
-    console.log(`Usage: sitemap-to-miro <url> --board <boardId> [options]
+    console.log(`Usage: crwl <url> --board <boardId> [options]
 
 Options:
   --board <id>             Target Miro board id (overrides MIRO_BOARD_ID env var)
@@ -57,7 +57,7 @@ Optional:
   MIRO_MCP_URL         Override the Miro MCP server URL (default: https://mcp.miro.com/)
 
 Miro auth: OAuth 2.1 — browser opens on first run, tokens cached to
-~/.config/sitemap-to-miro/tokens.json.
+~/.config/crwl/tokens.json.
 `);
     process.exit(args.length === 0 ? 1 : 0);
   }

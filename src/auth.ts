@@ -4,7 +4,7 @@
 // dynamic client registration. On first run we register this CLI as a client,
 // open the user's browser for consent, capture the auth code on a loopback
 // HTTP server, exchange it for tokens, and cache everything in
-// ~/.config/sitemap-to-miro/tokens.json (mode 0600). Subsequent runs reuse
+// ~/.config/crwl/tokens.json (mode 0600). Subsequent runs reuse
 // the cached client + tokens; the SDK auto-refreshes via refresh_token.
 
 import { createServer, type Server } from "node:http";
@@ -24,7 +24,7 @@ const CALLBACK_HOST = "127.0.0.1";
 const CALLBACK_PORT = 53682;
 const REDIRECT_URI = `http://${CALLBACK_HOST}:${CALLBACK_PORT}/callback`;
 
-const CACHE_DIR = path.join(os.homedir(), ".config", "sitemap-to-miro");
+const CACHE_DIR = path.join(os.homedir(), ".config", "crwl");
 const CACHE_FILE = path.join(CACHE_DIR, "tokens.json");
 
 interface CacheFile {
@@ -54,7 +54,7 @@ export class FileOAuthProvider implements OAuthClientProvider {
 
   get clientMetadata(): OAuthClientMetadata {
     return {
-      client_name: "sitemap-to-miro",
+      client_name: "crwl",
       redirect_uris: [REDIRECT_URI],
       grant_types: ["authorization_code", "refresh_token"],
       response_types: ["code"],

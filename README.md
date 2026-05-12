@@ -1,4 +1,4 @@
-# sitemap-to-miro
+# crwl
 
 A Node.js/TypeScript console app that **crawls a website with Firecrawl** and renders an **AI-generated sitemap tree diagram on a Miro board** via the **Miro MCP server**.
 
@@ -81,7 +81,7 @@ Miro's MCP server requires OAuth 2.1 — a static `Authorization: Bearer` token 
 2. Starts a one-shot loopback HTTP server on `127.0.0.1:53682`.
 3. Opens your browser to Miro's consent page.
 4. Captures the auth code on the loopback callback and exchanges it for tokens.
-5. Caches the registered client + tokens at `~/.config/sitemap-to-miro/tokens.json` (mode `0600`).
+5. Caches the registered client + tokens at `~/.config/crwl/tokens.json` (mode `0600`).
 
 Subsequent runs reuse the cache; the SDK refreshes the access token transparently via the cached refresh token. To force a re-auth, delete that file.
 
